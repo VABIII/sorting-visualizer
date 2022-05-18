@@ -27,9 +27,16 @@
     color: #333;
 }
 
+.insertion-algo {
+    transition: all .8s ease-out;
+    width: 50%;
+}
 
-
-
+.insertion-algo:hover,
+.insertion-algo:focus {
+    background-color: #fff;
+    color: #333;
+}
 
 
 
