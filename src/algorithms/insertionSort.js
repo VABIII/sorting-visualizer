@@ -1,6 +1,7 @@
 const insertionSort = (array, position, arraySteps, colorSteps) => {
     let colorKey = colorSteps[colorSteps.length - 1].slice();
 
+
     let i, j, key;
     for (i = 1; i < array.length; i++) {
         key = array[i];
