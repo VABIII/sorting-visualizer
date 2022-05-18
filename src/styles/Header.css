@@ -1,0 +1,74 @@
+.header-algos {
+    display: flex;
+    justify-content: space-around;
+    color: darkgrey;
+
+}
+
+.bubble-algo {
+    transition: all .8s ease-out;
+    width: 50%;
+}
+
+.bubble-algo:hover,
+.bubble-algo:focus {
+    background-color: #fff;
+    color: #333;
+}
+
+.selection-algo {
+    transition: all .8s ease-out;
+    width: 50%;
+}
+
+.selection-algo:hover,
+.selection-algo:focus {
+    background-color: #fff;
+    color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
