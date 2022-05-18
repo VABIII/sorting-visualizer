@@ -16,8 +16,22 @@ class App extends Component {
         timeouts: [],
     };
 
+    ALGORITHMS = {}
+
+    generateSteps = () => {
+        let array = this.state.array.slice();
+        let steps = this.state.arraySteps.slice();
+        let colorSteps = this.state.colorSteps.slice();
+
+        this.ALGORITHMS[this.state.algorithm](array, 0, steps, colorSteps);
+
+        this.setState({
+            arraySteps: steps,
+            colorSteps
+        })
 
 
+    }
 
 
 
