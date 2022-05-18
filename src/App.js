@@ -20,7 +20,7 @@ class App extends Component {
         colorSteps: [],
         currentStep: [],
         count: 20,
-        delay: 50,
+        delay: 100,
         algorithm: 'selectionSort',
         timeouts: [],
     };
