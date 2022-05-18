@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import './App.css';
-import Bar from "./components/Bar";
+import './styles/App.css';
+import Bars from "./components/Bar";
+import Header from "./components/Header";
 import Play from '@material-ui/icons/PlayCircleOutlineRounded';
 import Forward from '@material-ui/icons/SkipNextRounded';
 import Backward from '@material-ui/icons/SkipPreviousRounded';
 import RotateLeft from '@material-ui/icons/RotateLeft';
-
-
+import selectionSort from "./algorithms/selectionSort";
 
 
 class App extends Component {
@@ -19,11 +19,23 @@ class App extends Component {
         currentStep: [],
         count: 20,
         delay: 300,
-        algorithm: '',
+        algorithm: 'selectionSort',
         timeouts: [],
     };
 
-    ALGORITHMS = {}
+    ALGORITHMS = {
+        'selectionSort': selectionSort,
+    }
+
+    componentDidMount() {
+        this.generateRandomArray();
+    }
+
+    setAlgo = algo => {
+        this.setState({
+            algorithm: algo
+        })
+    }
 
     generateSteps = () => {
         let array = this.state.array.slice();
@@ -141,7 +153,7 @@ class App extends Component {
 
     render() {
         let bars = this.state.array.map((value, index) => (
-            <Bar
+            <Bars
                 key={index}
                 index={index}
                 length={value}
@@ -168,6 +180,9 @@ class App extends Component {
 
         return (
             <div className="App">
+                <div className="header">
+                    <Header setAlgo={this.setAlgo}/>
+                </div>
                 <div className="frame">
                     <div className="barsDiv container card">{bars}</div>
                 </div>
