@@ -7,6 +7,7 @@ import Forward from '@material-ui/icons/SkipNextRounded';
 import Backward from '@material-ui/icons/SkipPreviousRounded';
 import RotateLeft from '@material-ui/icons/RotateLeft';
 import selectionSort from "./algorithms/selectionSort";
+import bubbleSort from "./algorithms/bubbleSort";
 
 
 class App extends Component {
@@ -18,13 +19,14 @@ class App extends Component {
         colorSteps: [],
         currentStep: [],
         count: 20,
-        delay: 300,
+        delay: 150,
         algorithm: 'selectionSort',
         timeouts: [],
     };
 
     ALGORITHMS = {
-        'selectionSort': selectionSort,
+        selectionSort,
+        bubbleSort,
     }
 
     componentDidMount() {
@@ -152,6 +154,7 @@ class App extends Component {
     }
 
     render() {
+        console.log(this.state.algorithm, this.state.colorKey)
         let bars = this.state.array.map((value, index) => (
             <Bars
                 key={index}
