@@ -20,7 +20,7 @@ class App extends Component {
         colorSteps: [],
         currentStep: [],
         count: 20,
-        delay: 150,
+        delay: 50,
         algorithm: 'selectionSort',
         timeouts: [],
     };
@@ -86,6 +86,7 @@ class App extends Component {
             array: temp,
             arraySteps: [temp],
             currentStep: 0,
+            algorithm: this.state.algorithm,
         },
             ()=> {
             this.generateSteps();
