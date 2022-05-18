@@ -8,6 +8,7 @@ import Backward from '@material-ui/icons/SkipPreviousRounded';
 import RotateLeft from '@material-ui/icons/RotateLeft';
 import selectionSort from "./algorithms/selectionSort";
 import bubbleSort from "./algorithms/bubbleSort";
+import insertionSort from "./algorithms/insertionSort";
 
 
 class App extends Component {
@@ -27,6 +28,7 @@ class App extends Component {
     ALGORITHMS = {
         selectionSort,
         bubbleSort,
+        insertionSort,
     }
 
     componentDidMount() {
