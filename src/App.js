@@ -10,6 +10,7 @@ import selectionSort from "./algorithms/selectionSort";
 import bubbleSort from "./algorithms/bubbleSort";
 import insertionSort from "./algorithms/insertionSort";
 import quickSort from "./algorithms/quickSort";
+import merge from "./algorithms/mergeSort";
 
 
 class App extends Component {
@@ -31,6 +32,7 @@ class App extends Component {
         bubbleSort,
         insertionSort,
         quickSort,
+        merge,
     }
 
     componentDidMount() {

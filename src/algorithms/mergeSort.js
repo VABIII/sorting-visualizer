@@ -12,7 +12,7 @@ const updateColor = (position, colorSteps, start, L, R) => {
     colorSteps.push(colorKey);
 }
 
-export function mergeSort(array, position, arraySteps, colorSteps)  {
+function mergeSort(array, position, arraySteps, colorSteps)  {
     if(array.length === 1) return array;
     let mid = Math.floor(array.length / 2);
 
@@ -29,7 +29,7 @@ export function mergeSort(array, position, arraySteps, colorSteps)  {
     return arrayNew;
 }
 
-export function  merge(L, R, position, arraySteps, colorSteps){
+function  merge(L, R, position, arraySteps, colorSteps){
     let arrayNew = [],
         A = 0,
         B = 0;
@@ -56,6 +56,8 @@ export function  merge(L, R, position, arraySteps, colorSteps){
     return arrayNew;
 }
 
+
+export default mergeSort;
 
 
 
