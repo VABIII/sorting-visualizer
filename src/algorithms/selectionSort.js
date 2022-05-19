@@ -26,7 +26,6 @@ const selectionSort = (array, position, arraySteps, colorSteps) => {
         colorSteps.push(colorKey.slice());
     }
     colorSteps[colorSteps.length - 1] = new Array(array.length).fill(2);
-    console.log(array);
 };
 
 export default selectionSort;

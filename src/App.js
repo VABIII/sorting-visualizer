@@ -9,6 +9,7 @@ import RotateLeft from '@material-ui/icons/RotateLeft';
 import selectionSort from "./algorithms/selectionSort";
 import bubbleSort from "./algorithms/bubbleSort";
 import insertionSort from "./algorithms/insertionSort";
+import quickSort from "./algorithms/quickSort";
 
 
 class App extends Component {
@@ -29,6 +30,7 @@ class App extends Component {
         selectionSort,
         bubbleSort,
         insertionSort,
+        quickSort,
     }
 
     componentDidMount() {
