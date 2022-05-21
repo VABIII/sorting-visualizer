@@ -41,10 +41,14 @@ class App extends Component {
     }
 
     setAlgo = algo => {
-        this.setState({
-            algorithm: algo,
-            // currentStep: 0,
-        }, () => this.generateRandomArray())
+
+        if(!this.state.hide || this.state.arraySteps.length === this.state.currentStep) {
+            console.log('Nope sucka')
+            this.setState({
+                algorithm: algo,
+                // currentStep: 0,
+            }, () => this.generateRandomArray())
+        }
     }
 
     generateSteps = () => {
@@ -194,8 +198,9 @@ class App extends Component {
         return (
             <div className="App">
                 <div className="header">
-                    {!this.state.hide &&
-                        <Header setAlgo={this.setAlgo}/>}
+                    {/*{!this.state.hide &&*/}
+                        <Header setAlgo={this.setAlgo}/>
+                    {/*// }*/}
                 </div>
                 <div className="frame">
                     <div className="barsDiv container card">{bars}</div>
