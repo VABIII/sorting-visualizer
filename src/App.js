@@ -10,7 +10,7 @@ import selectionSort from "./algorithms/selectionSort";
 import bubbleSort from "./algorithms/bubbleSort";
 import insertionSort from "./algorithms/insertionSort";
 import quickSort from "./algorithms/quickSort";
-import merge from "./algorithms/mergeSort";
+import mergeSort from "./algorithms/mergeSort";
 
 
 class App extends Component {
@@ -20,7 +20,7 @@ class App extends Component {
         arraySteps: [],
         colorKey: [],
         colorSteps: [],
-        currentStep: [],
+        currentStep: 0,
         count: 20,
         delay: 75,
         algorithm: 'selectionSort',
@@ -28,11 +28,11 @@ class App extends Component {
     };
 
     ALGORITHMS = {
-        selectionSort,
-        bubbleSort,
-        insertionSort,
-        quickSort,
-        merge,
+        "selectionSort": selectionSort,
+        "bubbleSort": bubbleSort,
+        "insertionSort": insertionSort,
+        "quickSort": quickSort,
+        "mergeSort": mergeSort,
     }
 
     componentDidMount() {
@@ -41,8 +41,9 @@ class App extends Component {
 
     setAlgo = algo => {
         this.setState({
-            algorithm: algo
-        })
+            algorithm: algo,
+            // currentStep: 0,
+        }, () => this.generateRandomArray())
     }
 
     generateSteps = () => {
@@ -90,7 +91,7 @@ class App extends Component {
             array: temp,
             arraySteps: [temp],
             currentStep: 0,
-            algorithm: this.state.algorithm,
+            // algorithm: this.state.algorithm,
         },
             ()=> {
             this.generateSteps();
@@ -161,7 +162,7 @@ class App extends Component {
     }
 
     render() {
-        console.log(this.state.algorithm, this.state.colorKey)
+        console.log(this.state.algorithm, this.state.colorKey, this.state.currentStep)
         let bars = this.state.array.map((value, index) => (
             <Bars
                 key={index}
