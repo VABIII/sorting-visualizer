@@ -43,7 +43,6 @@ class App extends Component {
     setAlgo = algo => {
 
         if(!this.state.hide || this.state.arraySteps.length === this.state.currentStep) {
-            console.log('Nope sucka')
             this.setState({
                 algorithm: algo,
                 // currentStep: 0,
