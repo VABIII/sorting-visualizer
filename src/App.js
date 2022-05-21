@@ -25,6 +25,7 @@ class App extends Component {
         delay: 75,
         algorithm: 'selectionSort',
         timeouts: [],
+        hide: false,
     };
 
     ALGORITHMS = {
@@ -91,7 +92,7 @@ class App extends Component {
             array: temp,
             arraySteps: [temp],
             currentStep: 0,
-            // algorithm: this.state.algorithm,
+            hide: false,
         },
             ()=> {
             this.generateSteps();
@@ -151,6 +152,7 @@ class App extends Component {
                     array: steps[currentStep],
                     colorKey: colorSteps[currentStep],
                     currentStep: currentStep + 1,
+                    hide: true
                 });
                 timeouts.push(timeout);
             }, this.state.delay * i);
@@ -192,7 +194,8 @@ class App extends Component {
         return (
             <div className="App">
                 <div className="header">
-                    <Header setAlgo={this.setAlgo}/>
+                    {!this.state.hide &&
+                        <Header setAlgo={this.setAlgo}/>}
                 </div>
                 <div className="frame">
                     <div className="barsDiv container card">{bars}</div>
